@@ -1,0 +1,10 @@
+Bahasa yang digunakan untuk memberi instruksi ke komputer
+
+print() adalah function bawaan python untuk menampilkan apapun di layar.
+pertanyaan, 1. apa itu function, kamu menyebutkan itu bagian function tanpa mendeskripsikan
+function itu sendiri. 2. menampilkan apapun? apakah bisa gambar dan suara juga?
+
+variable kamu sebut kotak yang ada Namanya dan contoh data setiap dalam kotak itu hanya satu. jadi Batasan data dalam setiap kotak itu hanya satu atau bagaimana?
+
+apakah str() hanya bisa digunakan didalam function print()? karena saya tes tadi tanpa function print() dia tidak terubah dari int ke string.
+
