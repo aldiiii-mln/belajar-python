@@ -1,6 +1,21 @@
 """
 CONTACTS BOOK PROJECT
 """
+import json
+
+def save_contact(contact_list):
+    with open("contacts.json", "w") as f:
+        json.dump(contact_list, f)
+
+
+def load_contact():
+    
+    try:
+        with open("contacts.json", "r") as f:
+            contact_list = json.load(f)
+        return contact_list
+    except FileNotFoundError:
+        return []
 
 def add_contact(contact_list, name, number, email):
     contact_list.append({"Name" : name, "Number" : number, "Email" : email})
@@ -64,10 +79,12 @@ def menu(contact_list):
             input_number = input("Fill the Number: ")
             input_email = input("Fill the Email: ")
             add_contact(contact_list, input_name, input_number, input_email)
+            save_contact(contact_list)
 
         elif input_menu == 2:
             name3 = input("What's a name of contact you want to find: ")
             update_contact(contact_list, name3)
+            save_contact(contact_list)
             
         
         elif input_menu == 3:
@@ -80,6 +97,7 @@ def menu(contact_list):
         elif input_menu == 5:
             name3 = input("What's a name of contact you want to delete: ")
             delete_contact(contact_list, name3)
+            save_contact(contact_list)
         
         elif input_menu == 6:
             return 
@@ -90,6 +108,6 @@ def menu(contact_list):
     
 
 
-list_contact = []
+list_contact = load_contact()
 
 menu(list_contact)
