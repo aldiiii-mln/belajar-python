@@ -72,7 +72,12 @@ def menu():
         print("4. Look all Contact List")
         print("5. Delete Contact")
         print("6. Out of the Program")
-        input_menu = int(input("Choose a menu you want to do (1-6): "))
+        try:    
+            input_menu = int(input("Choose a menu you want to do (1-6): "))
+            
+        except ValueError:
+            print("Pick Option with number 1-6 and try again")
+            continue
         if input_menu == 1:
             name = input("What is Your Name? ")
             number = input("What is Your Number? ")
